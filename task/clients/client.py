@@ -27,7 +27,7 @@ class DialClient(BaseClient):
         
         # Create chat completions with client
         response = self._client.chat.completions.create(
-            deployment_id=self._deployment_name,
+            deployment_name=self._deployment_name,
             messages=messages_dict
         )
         
@@ -50,7 +50,7 @@ class DialClient(BaseClient):
         
         # Create chat completions with async client with streaming enabled
         response = await self._async_client.chat.completions.create(
-            deployment_id=self._deployment_name,
+            deployment_name=self._deployment_name,
             messages=messages_dict,
             stream=True
         )
